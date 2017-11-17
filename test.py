@@ -161,6 +161,7 @@ if __name__ == '__main__':
 		readinglaser=[0,0,0]
 		readingmappoint=[0,0,0]
         readingmaplaser=[0,0,0]
+#If doesnt work use numpy.dot
         readingmaplaser=(numpy.multiply(rot_matrixmm,(numpy.multiply(rot_matrixmb,(numpy.multiply(rot_matrixbl,numpy.transpose)+numpy.transpose(transbl))+numpy.transpose(transmb)))))+numpy.transpose(transmm)
 	    	for i in range(0,len(points[1])):
 			readinglaser[0]=points[0][i]
