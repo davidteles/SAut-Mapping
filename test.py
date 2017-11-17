@@ -159,13 +159,15 @@ if __name__ == '__main__':
 	    		points=calculate_coordenates(angle_min,angle_max,angle_increment,ranges)
 
 		readinglaser=[0,0,0]
-		readingmap=[0,0,0]
+		readingmappoint=[0,0,0]
+        readingmaplaser=[0,0,0]
+        readingmaplaser=(numpy.multiply(rot_matrixmm,(numpy.multiply(rot_matrixmb,(numpy.multiply(rot_matrixbl,numpy.transpose)+numpy.transpose(transbl))+numpy.transpose(transmb)))))+numpy.transpose(transmm)
 	    	for i in range(0,len(points[1])):
 			readinglaser[0]=points[0][i]
 			readinglaser[1]=points[1][i]
-			readingmap=rot_matrixbl*numpy.transpose(readinglaser)
-			readingmaping=(rot_matrixmm*(rot_matrixmb*(rot_matrixbl*numpy.transpose(readinglaser)+numpy.transpose(transbl))+numpy.transpose(transmb)))+numpy.transpose(transmm)
-			print(readingmap)
+			
+			readingmappoint=(numpy.multiply(rot_matrixmm,(numpy.multiply(rot_matrixmb,(numpy.multiply(rot_matrixbl,numpy.transpose)+numpy.transpose(transbl))+numpy.transpose(transmb)))))+numpy.transpose(transmm)
+			print(readingmaplaser,readingmappoint)
 
 	
 		
